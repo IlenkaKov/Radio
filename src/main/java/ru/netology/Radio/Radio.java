@@ -3,9 +3,11 @@ public class Radio {
     private int currentStation;
     private int currentVolume;
     private int maxStation;
+    private int minStstion;
 
     public Radio() {
         this.maxStation = 9;
+        this.minStstion=0;
 
     }
 
@@ -19,11 +21,11 @@ public class Radio {
             currentStation++;
             return;
         }
-        currentStation = 0;
+        currentStation = minStstion;
     }
 
     public void prevStation() {
-        if (currentStation != 0) {
+        if (currentStation != minStstion) {
             currentStation = currentStation - 1;
         } else {
             currentStation = maxStation;
